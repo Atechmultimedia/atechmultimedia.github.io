@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Atech Multimedia Entertainment</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <img src="images/logo.png" alt="Atech Multimedia Logo" class="logo">
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="clients.html">Clients</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero" style="background-image:url('images/services-hero.jpeg');">
+  <h1>Our Services</h1>
+  <p>Professional multimedia, design, printing, and ICT solutions</p>
+</section>
+
+<main>
+
+<!-- ================= SERVICES GRID ================= -->
+<section>
+<h2>Our Services</h2>
+<p>At Atech Multimedia, we provide a wide range of professional services to meet your creative, printing, and ICT needs. We combine expertise, creativity, and technology to deliver exceptional results for organizations, businesses, and individuals.</p>
+
+<div class="services">
+  <div class="service-box">
+    <h3>Branding & Identity</h3>
+    <p>Logo design, corporate branding, stationery, and visual identity solutions.</p>
+  </div>
+  <div class="service-box">
+    <h3>Promotional Materials</h3>
+    <p>Flyers, brochures, banners, posters, and event materials to market your organization.</p>
+  </div>
+  <div class="service-box">
+    <h3>Printing Services</h3>
+    <p>High-quality printing for documents, promotional items, and large format prints.</p>
+  </div>
+  <div class="service-box">
+    <h3>Signage & Displays</h3>
+    <p>Custom indoor and outdoor signage, banners, and display materials.</p>
+  </div>
+  <div class="service-box">
+    <h3>Publishing & Book Making</h3>
+    <p>Book design, publishing, binding, and printing for educational and professional use.</p>
+  </div>
+  <div class="service-box">
+    <h3>Embroidery & Material Printing</h3>
+    <p>Custom embroidery, fabric printing, and branded apparel for events and organizations.</p>
+  </div>
+  <div class="service-box">
+    <h3>Professional Training</h3>
+    <p>Workshops and training in design, multimedia, ICT skills, and printing technologies.</p>
+  </div>
+  <div class="service-box">
+    <h3>Digital Media & ICT</h3>
+    <p>Website design, digital marketing, social media content, and ICT solutions.</p>
+  </div>
+  <div class="service-box">
+    <h3>Photography & Videography</h3>
+    <p>Professional photo and video production for events, products, and marketing campaigns.</p>
+  </div>
+</div>
+</section>
+
+</main>
+
+<!-- ================= FLOATING BUTTONS ================= -->
+<a id="quoteBtn" class="button">Get a Quote</a>
+<a href="https://wa.me/233243266013" target="_blank" class="whatsapp-float">📱</a>
+
+<!-- ================= SOCIAL ICONS ================= -->
+<div class="social-floating">
+  <a href="https://www.facebook.com/YourPage" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.instagram.com/YourProfile" target="_blank"><i class="fab fa-instagram"></i></a>
+  <a href="https://twitter.com/YourHandle" target="_blank"><i class="fab fa-x-twitter"></i></a>
+  <a href="https://www.tiktok.com/@YourProfile" target="_blank"><i class="fab fa-tiktok"></i></a>
+  <a href="https://www.youtube.com/@YourChannel" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  &copy; 2026 Atech Multimedia Entertainment. All Rights Reserved.
+</footer>
+
+<!-- ================= GET A QUOTE MODAL ================= -->
+<div id="quoteModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Get a Quote</h2>
+    <form id="quoteForm" action="https://formspree.io/f/mojnagzr" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <textarea name="message" rows="4" placeholder="Project Details" required></textarea>
+      <button type="submit" class="button">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+var modal=document.getElementById("quoteModal");
+var btn=document.getElementById("quoteBtn");
+var span=document.getElementsByClassName("close")[0];
+btn.onclick=function(){modal.style.display="block";}
+span.onclick=function(){modal.style.display="none";}
+window.onclick=function(event){if(event.target==modal){modal.style.display="none";}}
+
+document.getElementById("quoteForm")?.addEventListener("submit",function(e){
+  e.preventDefault();
+  var form=e.target;
+  var data=new FormData(form);
+  fetch(form.action,{method:form.method,body:data,headers:{'Accept':'application/json'}})
+  .then(response=>{if(response.ok){alert("Thank you! Your quote request has been sent.");form.reset();modal.style.display="none";}else{alert("Oops! There was a problem submitting your form.");}})
+  .catch(error=>{alert("Oops! There was a problem submitting your form.");});
+});
+</script>
+
+</body>
+</html>

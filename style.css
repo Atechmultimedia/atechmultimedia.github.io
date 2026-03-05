@@ -454,7 +454,7 @@ footer {
     height: 60vh;
   }
   .hero-slider .slide {
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   }
   .hero-partner {
@@ -469,7 +469,7 @@ footer {
     height:50vh;
   }
   .hero-slider .slide {
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   }
   .hero-partner {
@@ -510,4 +510,5 @@ footer {
   }
 
 }
+
 

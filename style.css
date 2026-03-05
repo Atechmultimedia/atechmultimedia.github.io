@@ -510,7 +510,7 @@ footer {
 /* Tablets */
 @media (max-width: 900px) {
   .hero-slider {
-    height: 120vh; 
+    height: 100vh; 
     max-width: 100%/* reduce height for tablets */
     overflow: hidden;
   }
@@ -524,7 +524,7 @@ footer {
 /* Smartphones */
 @media (max-width: 600px) {
   .hero-slider {
-    height: 120vh;
+    height: 100vh;
     max-width: 100%
     overflow: hidden;/* reduce height for small phones */
   }
@@ -535,5 +535,6 @@ footer {
   }
 
 }
+
 
 

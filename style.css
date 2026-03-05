@@ -451,7 +451,7 @@ footer {
 /* Tablets */
 @media (max-width: 900px) {
   .hero-slider {
-    height: 60vh;
+    height: 50vh;
   }
   .hero-slider .slide {
     object-fit: contain;
@@ -466,7 +466,7 @@ footer {
 /* Smartphones */
 @media (max-width: 600px) {
   .hero-slider {
-    height:50vh;
+    height:40vh;
   }
   .hero-slider .slide {
     object-fit: contain;
@@ -510,5 +510,6 @@ footer {
   }
 
 }
+
 
 

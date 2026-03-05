@@ -514,7 +514,7 @@ footer {
   }
 
   .hero-slider .slide {
-    object-fit: cover;    /* fill the slider space */
+    object-fit: contain;    /* fill the slider space */
     object-position: center;
   }
 }
@@ -522,11 +522,12 @@ footer {
 /* Smartphones */
 @media (max-width: 600px) {
   .hero-slider {
-    height: 50vh;         /* reduce height for small phones */
+    height: 80vh;         /* reduce height for small phones */
   }
 
   .hero-slider .slide {
-    object-fit: cover;    /* fill the slider space */
+    object-fit: contain;    /* fill the slider space */
     object-position: center;
   }
+
 }

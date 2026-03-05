@@ -451,10 +451,10 @@ footer {
 /* Tablets */
 @media (max-width: 900px) {
   .hero-slider {
-    height: 40vh;
+    height: 60vh;
   }
   .hero-slider .slide {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
   }
   .hero-partner {
@@ -466,10 +466,10 @@ footer {
 /* Smartphones */
 @media (max-width: 600px) {
   .hero-slider {
-    height:40vh;
+    height:50vh;
   }
   .hero-slider .slide {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
   }
   .hero-partner {
@@ -510,3 +510,4 @@ footer {
   }
 
 }
+

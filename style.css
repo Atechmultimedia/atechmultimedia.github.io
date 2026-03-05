@@ -510,11 +510,13 @@ footer {
 /* Tablets */
 @media (max-width: 900px) {
   .hero-slider {
-    height: 60vh;         /* reduce height for tablets */
+    height: 70vh; 
+    max-width: 100%/* reduce height for tablets */
+    overflow: hidden;
   }
 
   .hero-slider .slide {
-    object-fit: contain;    /* fill the slider space */
+    object-fit: cover;    /* fill the slider space */
     object-position: center;
   }
 }
@@ -522,12 +524,15 @@ footer {
 /* Smartphones */
 @media (max-width: 600px) {
   .hero-slider {
-    height: 80vh;         /* reduce height for small phones */
+    height: 60vh;
+    max-width: 100%
+    overflow: hidden;/* reduce height for small phones */
   }
 
   .hero-slider .slide {
-    object-fit: contain;    /* fill the slider space */
-    object-position: center;
+    object-fit: cover;    /* fill the slider space */
+    object-position: top center;
   }
 
 }
+

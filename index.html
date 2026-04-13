@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -278,6 +279,7 @@
   <a href="https://www.instagram.com/atechmultimediagh" target="_blank"><i class="fab fa-instagram"></i></a>
   <a href="https://www.tiktok.com/@atechmediagh" target="_blank"><i class="fab fa-tiktok"></i></a>
   <a href="https://www.youtube.com/@atechmultimedia" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="https://wa.me/233243266013" target="_blank"><i class="fab fa-whatsapp"></i></a>
 </div>
 
 <button id="backToTop" title="Go to top">
@@ -361,11 +363,198 @@
 </div>
 
     <span id="closeModal">&times;</span>
-    <h2 style="text-align:center; color:#0a2a66;">Atech Order Center</h2>
     <p style="text-align:center; font-size:12px;">Select services to build your quote/receipt</p>
     
-    <label>Your Name/Organization:</label>
-    <input type="text" id="custName" placeholder="Enter name">
+<div class="order-center-section" style="max-width: 500px; background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #ddd; font-family: 'Segoe UI', sans-serif; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <h3 style="color: #0a2a66; margin-top: 0; border-bottom: 2px solid #f1c40f; padding-bottom: 8px;"></h3>
+    
+    <div style="margin-bottom: 12px;">
+    <label style="display:block; font-weight:bold; font-size: 13px; margin-bottom: 5px;">Customer Name</label>
+    <input type="text" id="custName" placeholder="Enter name..." style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
+</div>
+
+<div style="margin-bottom: 12px;">
+    <label style="display:block; font-weight:bold; font-size: 13px; margin-bottom: 5px;">Customer Phone (WhatsApp)</label>
+    <input type="text" id="custPhone" placeholder="024 XXX XXXX" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
+</div>
+
+<div style="margin-bottom: 12px;">
+    <label style="display:block; font-weight:bold; font-size: 13px; margin-bottom: 5px;">Customer Region</label>
+    <select id="custRegion" onchange="loadAreas()" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px; background:#fff;">
+        <option value="">Select Region</option>
+        <option value="Greater Accra">Greater Accra</option>
+        <option value="Ashanti">Ashanti</option>
+        <option value="Central">Central</option>
+        <option value="Eastern">Eastern</option>
+        <option value="Western">Western</option>
+        <option value="Western North">Western North</option>
+        <option value="Volta">Volta</option>
+        <option value="Oti">Oti</option>
+        <option value="Northern">Northern</option>
+        <option value="North East">North East</option>
+        <option value="Savannah">Savannah</option>
+        <option value="Upper East">Upper East</option>
+        <option value="Upper West">Upper West</option>
+        <option value="Bono">Bono</option>
+        <option value="Bono East">Bono East</option>
+        <option value="Ahafo">Ahafo</option>
+    </select>
+</div>
+
+<div style="margin-bottom: 12px;">
+    <label style="display:block; font-weight:bold; font-size: 13px; margin-bottom: 5px;">Customer Area / Town</label>
+    <select id="custArea" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px; background:#fff;">
+        <option value="">Select Area / Town</option>
+    </select>
+</div>
+
+<div style="margin-bottom: 12px;">
+    <label style="display:block; font-weight:bold; font-size: 13px; margin-bottom: 5px;">Digital Address</label>
+    <input type="text" id="custDigitalAddress" placeholder="e.g. GA-123-4567" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px;">
+</div>
+
+<script>
+const ghanaAreas = {
+    "Greater Accra": [
+        "37 Military Hospital", "Abeka", "Abelemkpe", "Ablekuma", "Abossey Okai", "Accra", "Achimota", "Adabraka", "Adenta", "Adjiriganor", "Afienya", "Agbogbloshie", "Alajo", "Amasaman", "American House", "Apenkwa", "Airport Residential", "Ashaley Botwe", "Ashaiman", "Ashongman Estates", "Asylum Down", "Atomic", "Avenor", "Awudome", "Ayi Mensah", "Baatsona", "Bubuashie", "Burma Camp", "Cantonments", "Chorkor", "Circle", "Dansoman", "Darkuman", "Dawhenya", "Dome", "Dzorwulu", "East Airport", "East Legon", "Fadama", "Gbawe", "Haatso", "Hillside", "James Town", "Kaneshie", "Kasoa", "Kasoa Iron City", "Kasoa Millennium City", "Kasoa Ofaakor", "Katamanso", "Kokomlemle", "Korle Gonno", "Kotobabi", "Kwabenya", "Labone", "Lakeside", "Lapaz", "Lartebiokoshie", "Laterbiokorshie", "Legon", "Madina", "Makola", "Mallam", "Mamobi", "Mamprobi", "Mataheko", "McCarthy Hill", "New Ashongman", "New Town", "Nima", "North Legon", "Nungua", "Odorkor", "Ofankor", "Old Ashongman", "Osu", "Oyarifa", "Oyibi", "Pig Farm", "Pokuase", "Prampram", "Ridge", "Roman Ridge", "Sakumono", "Santa Maria", "Shiashie", "Sowutuom", "Spintex", "Tabora", "Tema", "Tema Community 1", "Tema Community 10", "Tema Community 11", "Tema Community 12", "Tema Community 18", "Tema Community 19", "Tema Community 2", "Tema Community 25", "Tema Community 3", "Tema Community 4", "Tema Community 5", "Tema Community 6", "Tema Community 7", "Tema Community 8", "Tema Community 9", "Tesano", "Teshie", "Trade Fair", "Trassaco", "Tudu", "Weija", "West Airport", "West Legon"
+    ],
+    "Ashanti": [
+        "Kumasi", "Adum", "Asokwa", "Suame", "Tafo", "Bantama", "Dichemso", "Patasi", "Ahodwo", "Daban", "Atonsu", "Santasi", "Kwadaso", "Ejisu", "KNUST", "Ayeduase", "Bomso", "Tech Junction", "Sokoban", "Abrepo", "Manhyia", "Mampong", "Konongo", "Bekwai", "Ejura", "Obuasi", "Fomena", "Abuakwa", "Atwima", "Offinso", "Effiduase", "Asokore Mampong"
+    ],
+    "Central": [
+        "Cape Coast", "Pedu", "Abura", "University of Cape Coast", "Elmina", "Mankessim", "Kasoa", "Budumburam", "Winneba", "Swedru", "Apam", "Dunkwa-on-Offin", "Twifo Praso", "Agona Nkwanta", "Breman Asikuma"
+    ],
+    "Eastern": [
+        "Koforidua", "Effiduase", "Jumapo", "Akwadum", "Oyoko", "Suhum", "Nsawam", "Aburi", "Akropong", "Akim Oda", "Nkawkaw", "Mpraeso", "Kibi", "Somanya", "Asamankese", "Akosombo", "Atimpoku", "Mampong-Akuapem"
+    ],
+    "Western": [
+        "Sekondi", "Takoradi", "Effia", "Kwesimintsim", "Apowa", "Anaji", "Beach Road", "Tarkwa", "Bogoso", "Prestea", "Axim", "Half Assini", "Shama", "Agona Nkwanta", "Mpohor"
+    ],
+    "Western North": [
+        "Sefwi Wiawso", "Bibiani", "Awaso", "Juaboso", "Bodi", "Dadieso", "Akontombra"
+    ],
+    "Volta": [
+        "Ho", "Hohoe", "Keta", "Anloga", "Aflao", "Kpando", "Dzodze", "Sogakope", "Akatsi", "Adaklu"
+    ],
+    "Oti": [
+        "Dambai", "Nkwanta", "Kadjebi", "Jasikan", "Krachi", "Chinderi"
+    ],
+    "Northern": [
+        "Tamale", "Sagnarigu", "Nyohini", "Lamashegu", "Kalpohin", "Yendi", "Savelugu", "Walewale", "Gushegu", "Karaga"
+    ],
+    "North East": [
+        "Nalerigu", "Gambaga", "Walewale", "Bunkpurugu", "Chereponi", "Yunyoo"
+    ],
+    "Savannah": [
+        "Damongo", "Bole", "Sawla", "Salaga", "Daboya"
+    ],
+    "Upper East": [
+        "Bolgatanga", "Navrongo", "Bawku", "Zebilla", "Paga", "Binduri"
+    ],
+    "Upper West": [
+        "Wa", "Lawra", "Tumu", "Jirapa", "Nadowli", "Lambussie"
+    ],
+    "Bono": [
+        "Sunyani", "Fiapre", "Penkwase", "Berekum", "Dormaa", "Wenchi", "Odumase"
+    ],
+    "Bono East": [
+        "Techiman", "Kintampo", "Nkoranza", "Atebubu", "Prang", "Yeji"
+    ],
+    "Ahafo": [
+        "Goaso", "Bechem", "Kenyasi", "Hwidiem", "Duayaw Nkwanta", "Mim"
+    ]
+};
+
+function loadAreas() {
+    const region = document.getElementById("custRegion").value;
+    const areaSelect = document.getElementById("custArea");
+
+    areaSelect.innerHTML = '<option value="">Select Area / Town</option>';
+
+    if (ghanaAreas[region]) {
+        ghanaAreas[region].forEach(area => {
+            const option = document.createElement("option");
+            option.value = area;
+            option.textContent = area;
+            areaSelect.appendChild(option);
+        });
+    }
+}
+</script>
+
+    <div style="margin-bottom: 15px;">
+        <label style="display:block; font-weight:bold; font-size: 13px; color:#0a2a66; margin-bottom: 5px;">Select Delivery Method:</label>
+        <select id="deliveryMethod" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:4px; background: #f9f9f9; font-weight: bold;">
+            <option value="Pickup">Pickup</option>
+            <option value="Errandground">Errandground</option>
+            <option value="Bolt / Uber">Bolt / Uber</option>
+            <option value="OA Travel / VIP">OA Travel / VIP</option>
+            <option value="Standard Delivery">Standard Delivery</option>
+        </select>
+    </div>
+
+    <div style="display: flex; gap: 8px;">
+        <button onclick="payViaMoMo()" style="background:#f1c40f; flex:1; padding:12px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">💰 MOMO PAY</button>
+        <button onclick="sendToWhatsApp()" style="background:#25d366; color:white; flex:1; padding:12px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">💬 WHATSAPP</button>
+        <button id="emailBtn" onclick="sendEmailViaFormspree()" style="background:#3498db; color:white; flex:1; padding:12px; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">📧 EMAIL STAFF</button>
+    </div>
+</div>
+
+<script>
+    // Formspree Endpoint Integrated
+    const FORMSPREE_URL = "https://formspree.io/f/mojnagzr"; 
+
+    async function sendEmailViaFormspree() {
+        const customer = document.getElementById('custName').value;
+        const phone = document.getElementById('custPhone').value;
+        const delivery = document.getElementById('deliveryMethod').value;
+        const btn = document.getElementById('emailBtn');
+
+        if (!customer || !phone) {
+            return alert("Please enter Customer Name and Phone first.");
+        }
+
+        // Visual feedback for sending
+        btn.innerText = "Sending...";
+        btn.disabled = true;
+
+        try {
+            const response = await fetch(FORMSPREE_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({
+                    _subject: `New Atech Order: ${customer}`,
+                    customer_name: customer,
+                    customer_phone: phone,
+                    delivery_method: delivery,
+                    email_to: "atechmultimedia@hotmail.com"
+                })
+            });
+
+            if (response.ok) {
+                alert("Order details sent to Atech Hotmail successfully!");
+            } else {
+                alert("Error sending email. Check your Formspree settings.");
+            }
+        } catch (error) {
+            alert("Connection error. Please check your internet.");
+        } finally {
+            btn.innerText = "📧 EMAIL STAFF";
+            btn.disabled = false;
+        }
+    }
+
+    function payViaMoMo() {
+        alert("📢 ATECH MULTIMEDIA MOMO:\nNetwork: MTN\nNumber: 0243266013\nName: Atech Multimedia\n\nPlease use reference as payment note.");
+    }
+
+    function sendToWhatsApp() {
+        const customer = document.getElementById('custName').value || "Client";
+        const phone = "233243266013"; 
+        const msg = encodeURIComponent(`Hello ${customer}, your Atech Multimedia invoice is ready for review.`);
+        window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+    }
+</script>
 
     <label>Select Service:</label>
 <select id="serviceChoice" style="width: 100%; padding: 12px; border-radius: 8px; border: 2px solid #0a2a66; font-family: inherit;">
@@ -436,6 +625,17 @@
         <option value="ICT Training" data-price="1500">IT Training Session (₵1,500)</option>
         <option value="IT Support Contract" data-price="2000">Monthly IT Support (₵2,000)</option>
     </optgroup>
+
+ <optgroup label="🚚 DELIVERY & PICKUP (GHANA)">
+                <option value="Pickup (Accra New Town Office)" data-price="0">Self-Pickup: Accra New Town Office (FREE)</option>
+                <option value="Delivery (Kasoa Area)" data-price="30">Delivery: Kasoa Area (₵30)</option>
+                <option value="Delivery (Accra Central)" data-price="60">Delivery: Accra Central (₵60)</option>
+                <option value="Delivery (Tema/Ashaiman)" data-price="80">Delivery: Tema/Ashaiman (₵80)</option>
+                <option value="Delivery (Kumasi/Takoradi)" data-price="120">Delivery: Kumasi/Takoradi (₵120)</option>
+                <option value="Delivery (Tamale/North)" data-price="180">Delivery: Tamale/North (₵180)</option>
+                <option value="Delivery (Other Regions)" data-price="100">Delivery: Other Regions (₵100)</option>
+            </optgroup>
+
 </select>
 
     <label>Quantity:</label>
@@ -456,24 +656,6 @@
   <div id="bankInfoBox" style="display:none; background: #eef2f7; padding: 15px; border-radius: 10px; border-left: 5px solid #0a2a66; margin-bottom: 15px;">
         <h4 style="margin:0; color:#0a2a66;">Bank Transfer Details:</h4>
         <p style="margin: 5px 0; font-size: 14px;">Bank: [Your Bank]<br>Acc: [Your Number]</p>
-    </div>
-
-    <div style="margin-bottom: 12px;">
-        <button onclick="openPayment()" style="background: #ffb100; color: #000; width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display: block;">
-            <i class="fas fa-mobile-alt"></i> Pay via MoMo (₵)
-        </button>
-    </div>
-
-    <div style="margin-bottom: 12px;">
-        <button class="btn-wa" onclick="sendOrderWhatsApp()" style="background: #25d366; color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display: block;">
-            <i class="fab fa-whatsapp"></i> Send to WhatsApp
-        </button>
-    </div>
-
-    <div style="margin-bottom: 12px;">
-        <button class="btn-em" onclick="sendOrderEmail()" style="background: #0a2a66; color: white; width: 100%; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; display: block;">
-            <i class="fas fa-envelope"></i> Send via Email
-        </button>
     </div>
 
     <div style="margin-bottom: 12px;">
@@ -604,11 +786,9 @@ window.onclick = function(event) {
     img.addEventListener('selectstart', e => e.preventDefault());
   });
 });
-</script>
-<a href="https://wa.me/233243266013" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
-<script>
+
+
+
 /**
  * ATECH MULTIMEDIA - EMERGENCY RESCUE SCRIPT
  * This version includes "Safety Checks" to prevent the Order Center from disappearing.
@@ -707,221 +887,449 @@ function updateTotal() {
 
 // 5. DOCUMENT GENERATION
 function generateInvoice() {
-    const SECRET_CODE = "ATECH2026"; 
-    const entry = prompt("🔐 ATECH AUTHENTICATION\nEnter Manager Code to authorize:");
-
-    if (entry !== SECRET_CODE) {
-        alert("❌ ACCESS DENIED.");
-        return; 
-    }
-
-    const customer = document.getElementById('custName').value || "Valued Client";
-    const subtotalRaw = parseFloat(document.getElementById('displayPrice').innerText.replace('₵', '').replace(',', ''));
+    if (orderItems.length === 0) return alert("No items to print! Please add items first.");
     
+    const SECRET = "ATECH2026"; 
+    const auth = prompt("🔐 Admin Authorization Required:");
+    if (auth !== SECRET) return alert("Access Denied.");
+
+    // Data Extraction
+    const customer = document.getElementById('custName').value || "Valued Client";
+    const custPhone = document.getElementById('custPhone')?.value || "N/A";
+    const deliveryMethod = prompt("Select Delivery (Pickup, Errandground, Bolt, OA Travel):", "Pickup");
+
+    const subtotalRaw = orderItems.reduce((sum, item) => sum + item.subtotal, 0);
+    
+    // Ghanaian Tax Calculations
     const nhil = subtotalRaw * 0.025;    
     const getFund = subtotalRaw * 0.025; 
-    const vatAmount = (subtotalRaw + nhil + getFund) * 0.15; 
-    const grandTotal = subtotalRaw + nhil + getFund + vatAmount;
-    
-    const deposit70 = (grandTotal * 0.7).toFixed(2);
-    const balance30 = (grandTotal * 0.3).toFixed(2);
+    const vat = (subtotalRaw + nhil + getFund) * 0.15; 
+    const grandTotal = subtotalRaw + nhil + getFund + vat;
+
+    const deposit = (grandTotal * 0.7).toFixed(1);
+    const balance = (grandTotal * 0.3).toFixed(1);
+
+    const isPaid = confirm("OK for PAID RECEIPT / Cancel for UNPAID INVOICE");
+    const type = isPaid ? 'OFFICIAL RECEIPT' : 'OFFICIAL INVOICE';
     const refNumber = "ATECH-" + Math.floor(10000 + Math.random() * 90000);
-    const date = new Date().toLocaleDateString('en-GB'); 
-    const isPaid = confirm("OK for PAID RECEIPT\nCancel for UNPAID INVOICE");
-    const type = isPaid ? 'Receipt' : 'Invoice';
 
-    let itemRows = orderItems.map(item => `
-        <tr style="page-break-inside: avoid;">
-            <td style="padding: 10px 12px; border-bottom: 1px solid #eee;">${item.name}</td>
-            <td style="text-align: center; border-bottom: 1px solid #eee;">${item.qty}</td>
-            <td style="text-align: right; border-bottom: 1px solid #eee; font-weight: bold;">₵${item.subtotal.toFixed(2)}</td>
-        </tr>`).join('');
-
-    const printContent = `
+    const printWindow = window.open('', '_blank');
+    printWindow.document.write(`
         <html>
         <head>
+            <title>${type} - ${customer}</title>
             <style>
-                @page { size: A4; margin: 12mm; }
-                body { font-family: 'Segoe UI', sans-serif; color: #333; margin: 0; padding: 0; line-height: 1.4; }
+                @page { size: A4; margin: 0; }
+                html, body { margin: 0; padding: 0; width: 210mm; font-family: 'Segoe UI', Tahoma, sans-serif; background: white; }
+                .page-container { width: 210mm; min-height: 297mm; padding: 15mm 20mm; box-sizing: border-box; display: flex; flex-direction: column; position: relative; }
+                .watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-30deg); width: 450px; opacity: 0.05; z-index: 0; pointer-events: none; }
                 
-                /* This allows the table to flow naturally across pages */
-                table { width: 100%; border-collapse: collapse; page-break-after: auto; }
-                tr { page-break-inside: avoid; page-break-after: auto; }
-                thead { display: table-header-group; } /* Repeats header on Page 2 */
+                .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 5px solid #0a2a66; padding-bottom: 15px; z-index: 1; }
+                .logo-top { height: 70px; }
+                .brand-title h1 { margin: 0; color: #0a2a66; font-size: 26px; }
 
-                /* Only keep the Stamps and Taxes together, don't force them to Page 2 early */
-                .signature-tax-block { 
-                    page-break-inside: avoid; 
-                    margin-top: 20px;
+                .content-area { flex-grow: 1; margin-top: 30px; z-index: 1; }
+                table { width: 100%; border-collapse: collapse; }
+                th { text-align: left; padding: 10px; border-bottom: 2px solid #333; background: #f8f9fa; font-size: 12px; }
+                td { padding: 12px 10px; border-bottom: 1px solid #eee; font-size: 13px; }
+
+                .footer-wrapper { margin-top: auto; page-break-inside: avoid; z-index: 1; padding-top: 20px; }
+                
+                .deposit-highlight { 
+                    text-align: right; 
+                    border-right: 10px solid #f1c40f; 
+                    padding: 15px 20px; 
+                    background: #FFFDF0; 
+                    margin-bottom: 30px;
                 }
+
+                .summary-flex { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; }
+                .stamps-container { display: flex; gap: 40px; align-items: flex-end; }
+                .stamp-box { text-align: center; width: 140px; }
+                .stamp-box img { width: 100px; height: auto; display: block; margin: 0 auto; }
+                .stamp-line { border-top: 1.5px solid #333; font-size: 10px; font-weight: bold; padding-top: 8px; margin-top: 5px; }
+
+                .totals-box { width: 300px; font-size: 14px; font-weight: bold; line-height: 1.8; }
+                .total-row { display: flex; justify-content: space-between; }
+                .grand-total { border-top: 2px solid #0a2a66; margin-top: 5px; padding-top: 5px; color: #0a2a66; font-size: 22px; display: flex; justify-content: space-between; align-items: center; }
+
+                .location-footer { text-align: center; border-top: 1px solid #ddd; padding-top: 15px; font-size: 11px; margin-top: 20px; }
             </style>
         </head>
         <body>
-            <div id="tempPrintArea" style="padding: 10px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid #0a2a66; padding-bottom: 15px; margin-bottom: 25px;">
-                    <img src="images/logo.png" style="height: 80px;" onerror="this.src='https://via.placeholder.com/150?text=ATECH+LOGO'">
-                    <div style="text-align: right;">
-                        <h1 style="margin:0; color:#0a2a66; font-size: 26px; text-transform: uppercase;">Atech Multimedia</h1>
-                        <p style="margin:0; font-size: 10px; letter-spacing: 2px; font-weight: 600;">CREATIVE • DIGITAL • ICT SOLUTIONS</p>
+            <img src="images/logo.png" class="watermark">
+            <div class="page-container">
+                <div class="header">
+                    <img src="images/logo.png" class="logo-top">
+                    <div class="brand-title">
+                        <h1>ATECH MULTIMEDIA</h1>
+                        <p style="margin:0; font-size:9px; font-weight:bold; letter-spacing:2px;">CREATIVE • DIGITAL • ICT SOLUTIONS</p>
                     </div>
                 </div>
 
-                <div style="display: flex; justify-content: space-between; margin-bottom: 25px;">
+                <div style="display:flex; justify-content:space-between; margin-top:20px; font-size:13px;">
                     <div>
-                        <span style="color:#0a2a66; font-size: 10px; font-weight: bold; text-transform: uppercase;">Billed To:</span><br>
-                        <span style="font-size: 18px; font-weight: bold;">${customer}</span><br>
-                        <small style="color:#888; font-size: 12px;">Ref: ${refNumber}</small>
+                        <b style="color: #0a2a66;">BILLED TO:</b><br>
+                        <span style="font-size:18px; font-weight:900;">${customer}</span><br>
+                        <span>Tel: ${custPhone}</span><br>
+                        <span>REF: ${refNumber}</span>
                     </div>
-                    <div style="text-align: right;">
-                        <div style="background: ${isPaid ? '#28a745' : '#666'}; color: white; padding: 5px 20px; border-radius: 4px; font-weight: bold; font-size: 12px;">OFFICIAL ${type.toUpperCase()}</div>
-                        <p style="margin-top: 8px; font-size: 12px; font-weight: 600;">Date: ${date}</p>
+                    <div style="text-align:right;">
+                        <b style="color:#0a2a66; font-size:20px;">${type}</b><br>
+                        <span>DATE: ${new Date().toLocaleDateString('en-GB')}</span><br>
+                        <span style="background:#eee; padding:2px 8px; border-radius:4px; font-weight:bold; font-size:11px;">DELIVERY: ${deliveryMethod.toUpperCase()}</span>
                     </div>
                 </div>
 
-                <table>
-                    <thead>
-                        <tr style="background: #f4f6f8; border-bottom: 2px solid #0a2a66;">
-                            <th style="padding: 12px; text-align: left;">DESCRIPTION</th>
-                            <th style="padding: 12px; text-align: center;">QTY</th>
-                            <th style="padding: 12px; text-align: right;">TOTAL</th>
-                        </tr>
-                    </thead>
-                    <tbody>${itemRows}</tbody>
-                </table>
+                <div class="content-area">
+                    <table>
+                        <thead><tr><th>Description</th><th style="text-align:center;">Unit Cost</th><th style="text-align:center;">Qty</th><th style="text-align:right;">Total</th></tr></thead>
+                        <tbody>
+                            ${orderItems.map(item => `
+                                <tr>
+                                    <td>${item.name}</td>
+                                    <td style="text-align:center;">₵ ${(item.subtotal / item.qty).toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
+                                    <td style="text-align:center;">${item.qty}</td>
+                                    <td style="text-align:right;">₵ ${item.subtotal.toLocaleString()}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
 
-                <div class="signature-tax-block">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-end; padding-top: 25px;">
-                        <div style="display: flex; gap: 30px;">
-                            <div style="text-align: center;">
-                                <img src="images/stamp.png" style="width: 105px; height: auto; display: block; margin: 0 auto -5px auto;" onerror="this.style.display='none'">
-                                <p style="margin: 0; font-size: 11px; border-top: 1.5px solid #333; width: 140px; padding-top: 5px; font-weight: 600;">Authorized Stamp</p>
+                <div class="footer-wrapper">
+                    <div class="deposit-highlight">
+                        <h3 style="margin:0; color:#d35400;">70% COMMITMENT DEPOSIT: ₵ ${deposit}</h3>
+                        <p style="margin:5px 0 0 0; color:#666; font-weight:bold;">REMAINING BALANCE (30%): ₵ ${balance}</p>
+                    </div>
+
+                    <div class="summary-flex">
+                        <div class="stamps-container">
+                            <div class="stamp-box">
+                                <img src="images/stamp.png" onerror="this.style.visibility='hidden'">
+                                <div class="stamp-line">AUTHORISED STAMP</div>
                             </div>
-                            <div style="text-align: center;">
-                                <img src="images/signature.png" style="width: 105px; height: auto; display: block; margin: 0 auto -5px auto;" onerror="this.style.display='none'">
-                                <p style="margin: 0; font-size: 11px; border-top: 1.5px solid #333; width: 140px; padding-top: 5px; font-weight: 600;">Manager Signature</p>
+                            <div class="stamp-box">
+                                <img src="images/signature.png" onerror="this.style.visibility='hidden'">
+                                <div class="stamp-line">MANAGER SIGNATURE</div>
                             </div>
                         </div>
 
-                        <div style="width: 280px; text-align: right; line-height: 1.8; font-size: 14px;">
-                            <div style="display: flex; justify-content: space-between;"><span>Subtotal:</span> <span>₵${subtotalRaw.toFixed(2)}</span></div>
-                            <div style="display: flex; justify-content: space-between;"><span>NHIL (2.5%):</span> <span>₵${nhil.toFixed(2)}</span></div>
-                            <div style="display: flex; justify-content: space-between;"><span>GetFund (2.5%):</span> <span>₵${getFund.toFixed(2)}</span></div>
-                            <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #ddd; padding-bottom: 5px;"><span>VAT (15%):</span> <span>₵${vatAmount.toFixed(2)}</span></div>
-                            <div style="display: flex; justify-content: space-between; font-size: 20px; color: #0a2a66; font-weight: 900; padding-top: 8px;">
-                                <span>TOTAL:</span> <span>₵${grandTotal.toFixed(2)}</span>
-                            </div>
+                        <div class="totals-box">
+                            <div class="total-row"><span>SUBTOTAL:</span> <span>₵ ${subtotalRaw.toLocaleString()}</span></div>
+                            <div class="total-row"><span>NHIL (2.5%):</span> <span>₵ ${nhil.toFixed(2)}</span></div>
+                            <div class="total-row"><span>GETFUND (2.5%):</span> <span>₵ ${getFund.toFixed(2)}</span></div>
+                            <div class="total-row"><span>VAT (15%):</span> <span>₵ ${vat.toFixed(2)}</span></div>
+                            <div class="total-row grand-total"><span>GRAND TOTAL:</span> <span>₵ ${grandTotal.toLocaleString()}</span></div>
                         </div>
                     </div>
 
-                    <div style="margin-top: 25px; background: #fffde7; border-left: 6px solid #f1c40f; padding: 18px; text-align: right; border-radius: 0 5px 5px 0;">
-                        <h3 style="margin: 0; color: #d35400; font-size: 17px;">70% Commitment Deposit: ₵${deposit70}</h3>
-                        <p style="margin: 5px 0 0 0; color: #666; font-size: 13px;">Balance Due (30%): ₵${balance30}</p>
-                    </div>
-
-                    <div style="margin-top: 40px; text-align: center; border-top: 1px solid #eee; padding-top: 20px;">
-                        <p style="margin: 0; font-size: 12px; color: #333;"><strong>Payment:</strong> MoMo (MTN): 0243266013 (Atech Multimedia)</p>
-                        <p style="margin: 10px 0 0 0; font-weight: 800; color: #0a2a66; font-size: 14px; text-transform: uppercase;">"Excellence in Digital & Creative Solutions"</p>
-                        <p style="margin: 5px 0 0 0; font-size: 10px; color: #999;">Kasoa - Central Region, Ghana</p>
+                    <div class="location-footer">
+                        <p><b>PAYMENT:</b> MOMO (MTN): 0243266013 (ATECH MULTIMEDIA)</p>
+                        <p style="font-weight:900; color:#0a2a66; text-transform:uppercase; margin:5px 0;">"Excellence in Digital & Creative Solutions"</p>
+                        <p>ACCRA NEW TOWN / SHIASHIE EAST LEGON | 0243266013</p>
                     </div>
                 </div>
             </div>
         </body>
-        </html>`;
-
-    const originalContent = document.body.innerHTML; 
-    document.body.innerHTML = printContent;
+        </html>
+    `);
     
-    setTimeout(() => {
-        window.print();
-        document.body.innerHTML = originalContent;
-        window.location.reload(); 
-    }, 500);
-}
+    printWindow.document.close();
+    printWindow.onload = () => {
+        printWindow.print();
+        printWindow.onafterprint = () => { printWindow.close(); };
+    };
+} // Closes generateInvoice
 
-function sendOrderWhatsApp() {
-    const total = document.getElementById('displayPrice').innerText;
-    let msg = `*ATECH ORDER*%0A`;
-    orderItems.forEach(item => { msg += `• ${item.qty}x ${item.name} - ₵${item.subtotal.toLocaleString()}%0A`; });
-    msg += `%0A*TOTAL: ${total}*%0APay via MoMo: 0243266013`;
-    window.open(`https://wa.me/233243266013?text=${msg}`, '_blank');
-}
-
-function openPayment() {
-    console.log("Pay button clicked!"); // This helps us debug
-
-    // 1. Get the price from the display
-    const priceElement = document.getElementById('displayPrice');
-    const total = priceElement ? priceElement.innerText : "₵0";
-
-    // 2. Check if the basket is empty
-    if (total === "₵0" || total === "" || total === "₵") {
-        alert("Your order is empty. Please add a service first!");
-        return;
-    }
-
-    // 3. Show the Payment Prompt
-    const confirmPay = confirm("Confirm payment of " + total + " to Atech Multimedia?\n\nMTN MoMo: 0243266013\nName: Atech Multimedia Ent.");
-    
-    if (confirmPay) {
-        // This attempts to open the dialer on phones
-        window.location.href = "tel:*170#"; 
-        alert("Please dial *170# on your phone to complete the transfer to 0243266013. Use your Name as Reference.");
-    }
-}
-function openPayment() {
-    const total = document.getElementById('displayPrice').innerText;
-    
-    if (total === "₵0" || total === "") {
-        alert("Please add items to your list first!");
-        return;
-    }
-
-    // 1. Show the Bank Box on the screen
-    document.getElementById('bankInfoBox').style.display = "block";
-
-    // 2. Show the MoMo Option as an alert
-    const choice = confirm("PAYMENT OPTIONS:\n\nClick 'OK' to dial MoMo (*170#)\nClick 'Cancel' to see Bank Details on screen.");
-
-    if (choice) {
-        // User wants MoMo
-        window.location.href = "tel:*170#"; 
-        alert("Dialing *170#... Pay to: 0243266013 (Atech Multimedia Ent.)");
-    } else {
-        // User wants Bank
-        alert("Bank details have been displayed below the price. Please copy the account number.");
-    }
-}
-function sendOrderEmail() {
-    // 1. Get the Customer Name and Total
-    const customer = document.getElementById('custName').value || "Valued Client";
-    const total = document.getElementById('displayPrice').innerText;
-
-    // 2. Safety Check: If price is ₵0, don't send
-    if (total === "₵0" || total === "") {
-        alert("Please add items to your list before sending an email.");
-        return;
-    }
-
-    // 3. Build the Email Message
-    let emailSubject = "New Order Request from " + customer;
-    let emailBody = "Hello Atech Multimedia,%0D%0A%0D%0A";
-    emailBody += "I would like to place an order for the following services:%0D%0A%0D%0A";
-
-    // This pulls the text directly from your Order List on the screen
-    const orderListText = document.getElementById('orderList').innerText;
-    emailBody += encodeURIComponent(orderListText);
-
-    emailBody += "%0D%0A%0D%0ATOTAL ESTIMATE: " + total;
-    emailBody += "%0D%0A%0D%0APlease confirm availability. Thank you!";
-
-    // 4. Trigger the Email App (Outlook, Gmail, etc.)
-    const mailtoLink = "mailto:info@atechmultimedia.com?subject=" + encodeURIComponent(emailSubject) + "&body=" + emailBody;
-    
-    window.location.href = mailtoLink;
-}
 </script>
 
-<div id="printContainer" style="display:none;"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atech Multimedia Live Chat</title>
+<style>
+/* Reset & Layout */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+html, body { overflow-x: hidden; width: 100%; background: transparent; }
 
+/* Floating Button */
+.chat-toggle {
+  position: fixed; bottom: 20px; right: 20px; width: 120px; height: 46px;
+  border: none; border-radius: 14px; background: #0a2a66; color: #fff;
+  font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 8px 20px rgba(10,42,102,0.28);
+  z-index: 9999;
+}
+
+/* Chat Widget */
+.chat-widget {
+  position: fixed; bottom: 95px; right: 20px; width: 360px; max-width: calc(100vw - 40px);
+  height: 600px; max-height: 85vh; background: #fff; border-radius: 18px;
+  overflow: hidden; box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+  display: none; flex-direction: column; z-index: 9999; border: 1px solid #e5e5e5;
+}
+.chat-widget.active { display: flex; animation: fadeIn 0.3s ease; }
+
+.chat-header { background: #0a2a66; color: white; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; }
+.chat-header-left { display: flex; align-items: center; gap: 12px; }
+.chat-header-left img { width: 38px; height: 38px; object-fit: contain; }
+
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: #44eb44; box-shadow: 0 0 0 rgba(68, 235, 68, 0.4); animation: pulse 1.5s infinite; }
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(68, 235, 68, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(68, 235, 68, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(68, 235, 68, 0); }
+}
+
+.chat-body { flex:1; padding:16px; overflow-y:auto; background:#f9fbff; display:flex; flex-direction:column; gap:12px; }
+.message-wrapper { display: flex; align-items: flex-end; gap: 8px; max-width: 100%; }
+.bot-avatar { width: 25px; height: 25px; border-radius: 50%; object-fit: contain; flex-shrink: 0; }
+.message { padding:12px 14px; border-radius:15px; font-size:14px; line-height:1.4; word-wrap: break-word; }
+.bot-message { background:white; color:#333; border:1px solid #eee; border-bottom-left-radius:2px; max-width: 85%; }
+.user-message { background: linear-gradient(135deg, #0a2a66, #00bcd4); color:white; border-bottom-right-radius:2px; align-self: flex-end; }
+.user-wrapper { align-self: flex-end; flex-direction: row-reverse; }
+
+.suggestion-box { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.suggestion-btn, .suggestion-box button { 
+    background: #0a2a66; color: white; border: none; border-radius: 18px; 
+    padding: 7px 12px; cursor: pointer; font-size: 12px; margin-top: 5px;
+}
+
+.chat-footer { padding:12px; border-top:1px solid #eee; background:white; display:flex; gap:8px; }
+.chat-footer input { flex:1; border:1px solid #ddd; border-radius:20px; padding:10px 15px; outline:none; }
+.send-btn { background:#0a2a66; border:none; color:white; width:40px; height:40px; border-radius:50%; cursor:pointer; }
+
+.full-service-list strong { display:block; margin-top:12px; color: #0a2a66; border-bottom: 1px solid #eee; font-size: 11px; padding-bottom: 2px; text-transform: uppercase; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body>
+
+<button class="chat-toggle" id="chatToggle">Live Chat</button>
+
+<div class="chat-widget" id="chatWidget">
+  <div class="chat-header">
+    <div class="chat-header-left">
+      <img src="images/logo.png" alt="Logo" onerror="this.style.display='none'">
+      <div class="chat-header-text">
+        <h3 style="font-size:16px; margin:0; color:white;">Atech Assistant</h3>
+        <div style="display:flex; align-items:center; gap:6px; margin-top:2px;">
+          <span class="status-dot"></span>
+          <span style="font-size:11px; opacity:0.8; color:white;">Online • AI Powered</span>
+        </div>
+      </div>
+    </div>
+    <button id="closeChat" style="background:rgba(255,255,255,0.2); border:none; color:white; width:28px; height:28px; border-radius:50%; cursor:pointer;">×</button>
+  </div>
+  
+  <div class="chat-body" id="chatBody">
+    <div class="message-wrapper">
+      <img src="images/logo.png" class="bot-avatar" onerror="this.style.display='none'">
+      <div class="message bot-message">
+        <img src="images/logo.png" style="display: block; width: 100px; height: auto; margin: 0 auto 10px auto;" onerror="this.style.display='none'">
+        
+        Hello 👋 Welcome to <strong>Atech Multimedia</strong>.<br><br>
+        How can we help you today?
+        <div class="suggestion-box">
+          <button onclick="window.sendMsg('Graphic Designing')">Graphics</button>
+          <button onclick="window.sendMsg('Website Design & Dev')">Web Design</button>
+          <button onclick="window.showFullServiceList()">All Services</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+  <div class="chat-footer">
+    <input type="text" id="chatInput" placeholder="How can we help?">
+    <button class="send-btn" id="sendBtn">➤</button>
+  </div>
+</div>
+
+<script>
+const faqDatabase = [
+    { category:'DESIGN & IDENTITY', services:[
+        {name:'Graphic Designing', price:'₵150+'}, {name:'UI / UX Design', price:'₵400+'}, 
+        {name:'Website Design & Dev', price:'₵1,200+'}, {name:'Brand Identity', price:'₵500+'}, 
+        {name:'Logo Design', price:'₵150+'}, {name:'Letterheads', price:'₵50+'}
+    ]},
+    { category:'APPAREL & SOUVENIRS', services:[
+        {name:'T-Shirt Printing', price:'₵60+'}, {name:'Garment Printing', price:'₵70+'}, 
+        {name:'DTF & Apparels', price:'₵80+'}, {name:'Embroidery', price:'₵100+'}, 
+        {name:'Custom Key Rings', price:'₵20+'}, {name:'Branded Pens', price:'₵15+'}, 
+        {name:'Wrist Bands', price:'₵10+'}
+    ]},
+    { category:'PRINTING & SIGNAGE', services:[
+        {name:'Digital Printing', price:'₵5+'}, {name:'Large Format Printing', price:'₵400+'}, 
+        {name:'3D / 2D Corporate Signages', price:'₵800+'}, {name:'Vehicle Branding', price:'₵300+'}, 
+        {name:'Call Cards / Business Cards', price:'₵50+'}
+    ]},
+    { category:'PUBLISHING & REPORTS', services:[
+        {name:'Professional Publishing', price:'₵800+'}, {name:'Textbooks', price:'₵100+'}, 
+        {name:'School Exercise Books', price:'₵15+'}, {name:'Magazines', price:'₵120+'}, 
+        {name:'Corporate Reports', price:'₵250+'}, {name:'Brochures & Flyers', price:'₵50+'}, 
+        {name:'Book Making & Binding', price:'₵40+'}
+    ]},
+    { category:'PRODUCTION & SOUND', services:[
+        {name:'Sound Engineering', price:'₵200+'}, {name:'Audio & Video Editing', price:'₵150+'}, 
+        {name:'Voiceovers', price:'₵150+'}, {name:'Documentary Filming', price:'₵1,000+'}, 
+        {name:'Content Creation', price:'₵300+'}, {name:'Video Production', price:'₵500+'}
+    ]},
+    { category:'LIVE & TECH SUPPORT', services:[
+        {name:'Live Streaming Support', price:'₵500+'}, {name:'Technical Support', price:'₵150+'}, 
+        {name:'Professional Audio Visuals', price:'₵300+'}, {name:'Event Photography', price:'₵200+'}, 
+        {name:'Drone / Aerial Content', price:'₵400+'}
+    ]},
+    { category:'ICT & PROFESSIONAL TRAINING', services:[
+        {name:'Computer & Laptop Repairs', price:'₵150+'}, {name:'Hardware Maintenance', price:'₵100+'}, 
+        {name:'CCTV & Security Systems', price:'₵200+'}, {name:'Printer & Copier Servicing', price:'₵120+'}, 
+        {name:'Networking & Security', price:'₵300+'}, {name:'Software Installation', price:'₵80+'}, 
+        {name:'ICT Business Solutions', price:'Contact for Quote'}, {name:'Multimedia Training', price:'₵250+'}, 
+        {name:'Graphics Design Classes', price:'₵400+'}, {name:'Cybersecurity Training', price:'₵800+'}, 
+        {name:'IT Support Services', price:'₵200+'}, {name:'Technical Consultancy', price:'₵300+'}
+    ]}
+];
+
+const ghanaTowns = {
+    "Greater Accra": ["Accra Central", "Adenta", "Airport Residential", "Circle", "Dansoman", "East Legon", "Kaneshie", "Kwashieman", "Madina", "Spintex", "Tema", "Weija"],
+    "Ashanti": ["Kumasi", "Asokwa", "Bantama", "Danyame", "KNUST", "Mampong", "Obuasi", "Suame", "Tafo"],
+    "Central": ["Cape Coast", "Kasoa", "Winneba", "Elmina", "Mankessim", "Agona Swedru"],
+    "Western": ["Takoradi", "Sekondi", "Tarkwa", "Axim", "Elubo"],
+    "Eastern": ["Koforidua", "Akosombo", "Nkawkaw", "Nsawam", "Mpraeso", "Somanya"],
+    "Volta": ["Ho", "Hohoe", "Keta", "Aflao", "Anloga", "Sogakope"],
+    "Northern": ["Tamale", "Yendi", "Savelugu"],
+    "Bono": ["Sunyani", "Berekum", "Techiman"],
+    "Upper East": ["Bolgatanga", "Navrongo", "Bawku"],
+    "Upper West": ["Wa", "Jirapa", "Tumu"]
+};
+
+window.addMessage = function(content, sender) {
+    const chatBody = document.getElementById('chatBody');
+    const wrapper = document.createElement('div');
+    wrapper.className = `message-wrapper ${sender === 'user' ? 'user-wrapper' : 'bot-wrapper'}`;
+    
+    if(sender === 'bot') {
+        const avatar = document.createElement('img');
+        avatar.src = 'images/logo.png';
+        avatar.className = 'bot-avatar';
+        avatar.onerror = function() { this.style.display='none'; };
+        wrapper.appendChild(avatar);
+    }
+    
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `message ${sender === 'user' ? 'user-message' : 'bot-message'}`;
+    
+    if (content instanceof HTMLElement) msgDiv.appendChild(content);
+    else msgDiv.innerHTML = content;
+    
+    wrapper.appendChild(msgDiv);
+    chatBody.appendChild(wrapper);
+    setTimeout(() => { chatBody.scrollTop = chatBody.scrollHeight; }, 50);
+};
+
+window.updateTowns = function() {
+    const regionSelect = document.getElementById("custRegion");
+    const townSelect = document.getElementById("custArea");
+    if (!regionSelect || !townSelect) return;
+    const selectedRegion = regionSelect.value;
+    townSelect.innerHTML = '<option value="">-- Select Town --</option>';
+    if (selectedRegion && ghanaTowns[selectedRegion]) {
+        ghanaTowns[selectedRegion].forEach(town => {
+            let opt = document.createElement("option"); opt.value = town; opt.textContent = town; townSelect.appendChild(opt);
+        });
+    }
+};
+
+window.sendMsg = function(val) {
+    const chatInput = document.getElementById('chatInput');
+    const inputVal = val || chatInput.value.trim();
+    if (!inputVal) return;
+
+    window.addMessage(inputVal, 'user');
+    chatInput.value = '';
+
+    setTimeout(() => {
+        const lowText = inputVal.toLowerCase();
+        
+        // Town Detection Logic
+        let foundArea = null;
+        for (let region in ghanaTowns) {
+            ghanaTowns[region].forEach(town => {
+                if (lowText.includes(town.toLowerCase())) foundArea = { town, region };
+            });
+        }
+
+        if (foundArea) {
+            window.addMessage(`We provide delivery and support to <strong>${foundArea.town}</strong> in the ${foundArea.region} region.`, 'bot');
+            return;
+        }
+
+        // Delivery/Location Trigger
+        if (lowText.includes('delivery') || lowText.includes('location') || lowText.includes('ship')) {
+            showDeliverySelection();
+            return;
+        }
+
+        // Service Matching Logic
+        let matchedService = null;
+        faqDatabase.forEach(cat => {
+            cat.services.forEach(s => {
+                if (lowText.includes(s.name.toLowerCase())) matchedService = s;
+            });
+        });
+
+        if (matchedService) {
+            window.addMessage(`<strong>${matchedService.name}</strong><br>Estimated starting price: ${matchedService.price}`, 'bot');
+        } else {
+            window.addMessage("How else can Atech Multimedia assist you today?", 'bot');
+        }
+    }, 600);
+};
+
+window.showFullServiceList = function() {
+    const container = document.createElement('div');
+    container.className = 'full-service-list';
+    faqDatabase.forEach(cat => {
+        const title = document.createElement('strong'); title.textContent = cat.category; container.appendChild(title);
+        cat.services.forEach(s => {
+            const btn = document.createElement('button'); btn.className = 'suggestion-btn'; btn.textContent = s.name;
+            btn.onclick = () => window.sendMsg(s.name); container.appendChild(btn);
+        });
+    });
+    window.addMessage("Full Service & Pricing List:", 'bot');
+    window.addMessage(container, 'bot');
+};
+
+function showDeliverySelection() {
+    const form = document.createElement('div');
+    form.innerHTML = `
+        <div style="display:flex; flex-direction:column; gap:5px; margin-top:5px; background:#f0f0f0; padding:10px; border-radius:10px;">
+            <select id="custRegion" onchange="window.updateTowns()" style="padding:6px; border-radius:8px;">
+                <option value="">-- Select Region --</option>
+                ${Object.keys(ghanaTowns).map(r => `<option value="${r}">${r}</option>`).join('')}
+            </select>
+            <select id="custArea" style="padding:6px; border-radius:8px;"><option value="">-- Select Town --</option></select>
+            <select id="deliveryMethod" style="padding:6px; border-radius:8px;">
+                <option value="Pickup">Pickup at Office</option>
+                <option value="Errandground">Errandground</option>
+                <option value="Bolt/Uber">Bolt / Uber</option>
+                <option value="Standard">Standard Delivery</option>
+            </select>
+            <button onclick="window.sendMsg('Location Set')" class="suggestion-btn">Confirm Details</button>
+        </div>`;
+    window.addMessage("Please select your area to check delivery:", 'bot');
+    window.addMessage(form, 'bot');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('chatToggle').onclick = () => document.getElementById('chatWidget').classList.toggle('active');
+    document.getElementById('closeChat').onclick = () => document.getElementById('chatWidget').classList.remove('active');
+    document.getElementById('sendBtn').onclick = () => window.sendMsg();
+    document.getElementById('chatInput').onkeypress = (e) => { if(e.key === 'Enter') window.sendMsg(); };
+});
+
+</script>
 </body>
 </html>

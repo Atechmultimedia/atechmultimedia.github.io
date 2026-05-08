@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Page not found. Visit Atech Multimedia Entertainment for creative design, printing, and ICT solutions in Accra, Ghana.">
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://atechmultimedia.com/404.html">
+<meta property="og:title"       content="Page Not Found | Atech Multimedia Entertainment">
+<meta property="og:description" content="The page you're looking for doesn't exist. Visit Atech Multimedia for creative design, printing, and ICT solutions in Ghana.">
+<meta property="og:image"       content="https://atechmultimedia.com/images/logo.png">
+<meta property="og:site_name"   content="Atech Multimedia Entertainment">
+<meta name="twitter:card"        content="summary">
+<meta name="twitter:title"       content="Page Not Found | Atech Multimedia Entertainment">
+<meta name="twitter:description" content="Page not found. Visit Atech Multimedia for creative design, printing and ICT solutions in Ghana.">
+<meta name="robots"              content="noindex, nofollow">
+<title>Page Not Found | Atech Multimedia Entertainment</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+.error-wrap {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.error-number {
+  font-size: clamp(80px, 20vw, 160px);
+  font-weight: 900;
+  line-height: 1;
+  color: #0a2a66;
+  opacity: 0.08;
+  letter-spacing: -4px;
+  user-select: none;
+}
+
+.error-icon-wrap {
+  margin-top: -30px;
+  margin-bottom: 20px;
+}
+
+.error-icon-wrap i {
+  font-size: 56px;
+  color: #0a2a66;
+}
+
+.error-wrap h1 {
+  font-size: clamp(22px, 4vw, 32px);
+  color: #0a2a66;
+  margin-bottom: 12px;
+}
+
+.error-wrap p {
+  font-size: 16px;
+  color: #666;
+  max-width: 480px;
+  margin: 0 auto 10px;
+  line-height: 1.7;
+}
+
+.redirect-notice {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 32px;
+}
+
+#countdown {
+  font-weight: bold;
+  color: #0a2a66;
+}
+
+.error-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.error-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.error-links a:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+.btn-home    { background: #0a2a66; color: white; }
+.btn-service { background: #444;    color: white; }
+.btn-contact { background: #444;    color: white; }
+.btn-wa      { background: #25D366; color: white; }
+
+.quick-links {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.quick-links a {
+  color: #0a2a66;
+  text-decoration: none;
+  margin: 0 6px;
+  font-weight: bold;
+}
+
+.quick-links a:hover { text-decoration: underline; }
+
+/* Progress bar for countdown */
+.redirect-bar-wrap {
+  width: 200px;
+  height: 3px;
+  background: #eee;
+  border-radius: 3px;
+  margin: 8px auto 0;
+  overflow: hidden;
+}
+
+#redirectBar {
+  height: 100%;
+  width: 100%;
+  background: #0a2a66;
+  border-radius: 3px;
+  transform-origin: left;
+  animation: drain 10s linear forwards;
+}
+
+@keyframes drain {
+  from { transform: scaleX(1); }
+  to   { transform: scaleX(0); }
+}
+
+@media (max-width: 600px) {
+  .error-links { flex-direction: column; align-items: center; }
+  .error-links a { width: 200px; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="images/logo.png" alt="Atech Multimedia Entertainment Logo" class="logo" loading="lazy">
+  <nav class="main-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="clients.html">Clients</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="error-wrap">
+
+    <div class="error-number">404</div>
+
+    <div class="error-icon-wrap">
+      <i class="fas fa-search-minus" aria-hidden="true"></i>
+    </div>
+
+    <h1>Page Not Found</h1>
+    <p>The page you're looking for doesn't exist or may have been moved. Let's get you back on track.</p>
+
+    <p class="redirect-notice">
+      Redirecting to homepage in <span id="countdown">10</span> seconds
+    </p>
+    <div class="redirect-bar-wrap">
+      <div id="redirectBar"></div>
+    </div>
+
+    <br>
+
+    <div class="error-links">
+      <a href="index.html" class="btn-home">
+        <i class="fas fa-home" aria-hidden="true"></i> Go to Homepage
+      </a>
+      <a href="services.html" class="btn-service">
+        <i class="fas fa-list" aria-hidden="true"></i> View Services
+      </a>
+      <a href="contact.html" class="btn-contact">
+        <i class="fas fa-envelope" aria-hidden="true"></i> Contact Us
+      </a>
+      <a href="https://wa.me/233243266013" target="_blank" rel="noopener" class="btn-wa">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Us
+      </a>
+    </div>
+
+    <p class="quick-links">
+      Or jump to:
+      <a href="portfolio.html">Portfolio</a> ·
+      <a href="clients.html">Clients</a> ·
+      <a href="about.html">About Us</a>
+    </p>
+
+  </div>
+</main>
+
+<footer class="main-footer">
+  <div class="footer-bottom">
+    <p>&copy; 2026 Atech Multimedia Entertainment. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<button id="backToTop" title="Back to top" aria-label="Back to top">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</button>
+
+<script src="js/shared.js"></script>
+<script>
+/* Auto-redirect countdown */
+(function () {
+  var secs = 10;
+  var el = document.getElementById('countdown');
+  var timer = setInterval(function () {
+    secs -= 1;
+    if (el) el.textContent = secs;
+    if (secs <= 0) {
+      clearInterval(timer);
+      window.location.href = 'index.html';
+    }
+  }, 1000);
+
+  /* Cancel redirect if user clicks any navigation link */
+  document.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      clearInterval(timer);
+      var notice = document.querySelector('.redirect-notice');
+      var bar = document.querySelector('.redirect-bar-wrap');
+      if (notice) notice.style.display = 'none';
+      if (bar) bar.style.display = 'none';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
